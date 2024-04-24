@@ -17,6 +17,10 @@
   # environment.
   home.packages = with pkgs; [
     # zoxide
+    firefox
+    git
+    neovim
+    neofetch
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
