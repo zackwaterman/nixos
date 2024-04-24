@@ -14,6 +14,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -86,7 +90,7 @@
     description = "Zack Waterman";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
+      
     ];
   };
 
@@ -96,9 +100,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    git
-    neofetch
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

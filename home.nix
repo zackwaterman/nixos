@@ -15,8 +15,8 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-
+  home.packages = with pkgs; [
+    # zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -57,13 +57,13 @@
   # Programs
   programs = {
 
-    bash = {
-      enable = true;
-      shellAliases = {
-        ll = "ls -al";
-        gs = "git status";
-      };
-    };
+    # bash = {
+    #   enable = true;
+    #   shellAliases = {
+    #     ll = "ls -al";
+    #     gs = "git status";
+    #   };
+    # };
 
     git = {
       enable = true;
@@ -71,6 +71,19 @@
       userEmail = "zack.waterman@watermancs.com";
       extraConfig = {
         init.defaultBranch = "main";
+      };
+    };
+
+    zoxide = {
+      enable = true;
+    };
+
+    zsh = {
+      enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        ll = "ls -al";
+        gs = "git status";
       };
     };
 
